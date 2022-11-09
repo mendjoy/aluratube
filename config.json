@@ -1,0 +1,111 @@
+{
+    "name": "Joyce M Miranda",
+    "Job": "Dev Front-end",
+    "github": "mendjoy",
+    "playlists": {
+        "musicas": [
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            }
+        ], 
+        "front-end":[
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            },
+            {
+                "title": "Algum titulo",
+                "url": "url",
+                "thumb": "thumbnail do video"
+            }
+        ]
+    }
+}
