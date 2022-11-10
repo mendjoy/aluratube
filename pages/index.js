@@ -1,29 +1,35 @@
 import config from "../config.json"
 import styled from "styled-components"
+import { CSSReset } from "../src/components/CSSReset"
+import Menu from "../src/components/Menu"
+import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-    const estiloDaHomePage ={ backgroundColor: "red"}
+    const estiloDaHomePage ={}
 
     return (
-        <div style={estiloDaHomePage}>
-            <Menu/>
-            <Header />
-            <Timeline playlists={config.playlists}>
-                conteudo:
-            </Timeline>
-        </div>
+        <>
+            <CSSReset/>
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+            }}>
+                <Menu />
+                <main style={{display: "flex", flexDirection: "column", flex: 1}}>
+                    <Header />
+                    <Timeline playlists={config.playlists}>
+                        conteudo:
+                    </Timeline>
+                </main>
+            </div>
+        </>
     )
   }
   
   export default HomePage
 
-  function Menu(){
-    return(
-        <div>
-            Menu
-        </div>
-    )
-  }
+  
 
   const StyledHeader = styled.div`
     img {
@@ -32,6 +38,7 @@ function HomePage() {
         border-radius:50%;
     }
     .user-info{
+        margin-top: 50px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -59,7 +66,7 @@ function HomePage() {
     const playlistNames = Object.keys(props.playlists);
 
     return(
-        <div>
+        <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
 
@@ -83,6 +90,6 @@ function HomePage() {
                 )
             })}
             
-        </div>
+        </StyledTimeline>
     )
   }
