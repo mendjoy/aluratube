@@ -1,11 +1,16 @@
+import React from "react";
 import config from "../config.json"
 import styled from "styled-components"
 import { CSSReset } from "../src/components/CSSReset"
-import Menu from "../src/components/Menu"
-import { StyledTimeline } from "../src/components/Timeline";
+import Menu from "../src/components/Menu/index"
+import { StyledTimeline } from "../src/components/Timeline"
+
 
 function HomePage() {
-    const estiloDaHomePage ={}
+
+    
+    const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+  
 
     return (
         <>
@@ -15,11 +20,13 @@ function HomePage() {
                 flexDirection: "column",
                 flex: 1,
             }}>
-                <Menu />
+                {/*Prop driling */}
+                <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
                 <main style={{display: "flex", flexDirection: "column", flex: 1}}>
-                    <Header />
-                    <Timeline playlists={config.playlists}>
+                    <Header  />
+                    <Timeline playlists={config.playlists} searchValue={valorDoFiltro}>
                         conteudo:
+
                     </Timeline>
                 </main>
             </div>
@@ -36,9 +43,10 @@ function HomePage() {
         width: 80px;
         height: 80px;
         border-radius:50%;
+
     }
     .user-info{
-        margin-top: 50px;
+        margin-top: 15px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -46,9 +54,19 @@ function HomePage() {
         gap: 16px;
     }
   `;
-  function Header(){
+    const StyledBanner = styled.div`
+        background-color: gray;
+        background-image: url(${({ bg }) => bg});
+        height: 230px;
+        
+        
+`;
+ 
+  function Header(props){
     return(
         <StyledHeader>
+
+            <StyledBanner bg={config.bg} />
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
@@ -61,28 +79,36 @@ function HomePage() {
     )
   }
 
-  function Timeline(props){
+  function Timeline({searchValue, ...props}){
 
     const playlistNames = Object.keys(props.playlists);
-
+  
     return(
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
-
+  
                 return (
-                    <section>
+                    <section key={playlistName}>
                         <h2>{playlistName}</h2>
                         <div>
-                           {
-                            videos.map((video) => {
-                                return (
-                                    <a href={video.url}>
-                                        <img  src={video.thumb}/>
-                                        <span>
-                                            {video.title}
-                                        </span>
-                                    </a>
+  
+                           {videos.filter((video) =>  {
+  
+                                const titleNormlized = video.title.toLowerCase();
+                                const searchValueNormalized = searchValue.toLowerCase();
+  
+                                return titleNormlized.includes(searchValueNormalized)
+  
+                                })
+                                .map((video) => {
+                                    return (
+                                        <a href={video.url} key={video.url}>
+                                            <img  src={video.thumb}/>
+                                            <span>
+                                                {video.title}
+                                            </span>
+                                        </a>
                                 )
                             })}
                         </div>
@@ -93,3 +119,6 @@ function HomePage() {
         </StyledTimeline>
     )
   }
+
+
+  
