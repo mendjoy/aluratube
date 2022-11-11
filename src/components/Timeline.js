@@ -32,7 +32,7 @@ export const StyledTimeline = styled.div`
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: scroll;
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: x proximity;
       a {
         scroll-snap-align: start;
         span {
